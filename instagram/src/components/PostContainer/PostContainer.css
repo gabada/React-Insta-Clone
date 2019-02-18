@@ -1,0 +1,15 @@
+.userLogo {
+    border-radius: 50%;
+    width: 50px;
+    margin: 10px 0;
+}
+
+.username {
+    font-weight: 700;
+    margin-left: 10px;
+}
+
+.card {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
