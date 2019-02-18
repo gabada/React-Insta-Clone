@@ -1,16 +1,12 @@
 import React from 'react';
+import Comment from '../Comment/Comment';
 
 const CommentSection = props => {
     return (
         <>
             {props.comments.map((comment, index) => (
             <div key={index}>
-                <div className="commentUserName">
-                    {comment.username}
-                </div>
-                <div className="commentText">
-                    {comment.text}
-                </div>
+                <Comment username={comment.username} text={comment.text} />
             </div>
             ))}
         </>
