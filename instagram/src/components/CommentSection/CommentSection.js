@@ -13,22 +13,23 @@ class CommentSection extends Component {
             post: props.post
         }
     }
+
     render() {
-    return (
-        <>
-            {this.state.comments.map((comment, index) => (
-            <div key={index}>
-                <Comment username={comment.username} text={comment.text} />
-            </div>
-            ))}
-            <span className="time">{this.state.post.timestamp}</span>
-            <div>
-            <input className="addComment" type="text" placeholder="Add a comment..."/>
-            <img src={Dots} alt="more" className="dots"/>
-            </div>
-        </>
-    );
-            }
+        return (
+            <>
+                {this.state.comments.map((comment, index) => (
+                <div key={index}>
+                    <Comment username={comment.username} text={comment.text} />
+                </div>
+                ))}
+                <span className="time">{this.state.post.timestamp}</span>
+                <div>
+                <input className="addComment" type="text" placeholder="Add a comment..."/>
+                <img src={Dots} alt="more" className="dots"/>
+                </div>
+            </>
+        );
+    }
 };
 
 CommentSection.propTypes = {
