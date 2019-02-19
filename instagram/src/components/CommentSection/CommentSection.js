@@ -11,9 +11,26 @@ class CommentSection extends Component {
         super(props);
         this.state = {
             comments: props.comments,
-            post: props.post
+            post: props.post,
+            commentInput: ""
         }
     }
+
+    handleChange = e => {
+        this.setState({ commentInput: e.target.value });
+    }
+
+    addNewComment = e =>  {
+        e.preventDefault();
+        const newComment = {
+            text: this.state.commentInput,
+            username: "Troll"
+        }
+        this.setState({
+            comments: [...this.state.comments, newComment],
+            commentInput: ''
+        })
+    };
 
     render() {
         return (
@@ -25,8 +42,10 @@ class CommentSection extends Component {
                 ))}
                 <span className="time">{moment(this.state.post.timestamp, 'MMMM Do YYYY, hh:mm:ss a').fromNow()}</span>
                 <div>
-                <input className="addComment" type="text" placeholder="Add a comment..."/>
+                <form onSubmit={this.addNewComment}>
+                <input className="addComment" onChange={this.handleChange} value={this.state.commentInput} type="text" placeholder="Add a comment..."/>
                 <img src={Dots} alt="more" className="dots"/>
+                </form>
                 </div>
             </>
         );
