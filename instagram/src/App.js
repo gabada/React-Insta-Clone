@@ -19,19 +19,32 @@ class App extends Component {
     })
   }
 
-  addLike = index => {
+  addLike = imageUrl => {
     let newPosts = [...this.state.posts];
-    newPosts[index].likes += 1
+    let filteredIndex = this.state.posts.findIndex(post => imageUrl === post.imageUrl)
+    newPosts[filteredIndex].likes += 1
     this.setState({
       posts: newPosts
+    })
+  }
+
+  searchPost = e => {
+    e.preventDefault();
+    let filteredPosts = this.state.posts.filter(post => post.username.includes(e.target.value));
+      this.setState({
+        filteredPosts: filteredPosts
     })
   }
 
   render() {
     return (
       <div className="App">
-      <Header />
-      <PostContainer posts={this.state.posts} addLike={this.addLike} />
+      <Header searchPost={this.searchPost} />
+      <PostContainer posts={this.state.filteredPosts.length > 0
+        ? this.state.filteredPosts
+        : this.state.posts}
+        addLike={this.addLike}
+      />
       </div>
     );
   }

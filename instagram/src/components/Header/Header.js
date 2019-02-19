@@ -15,7 +15,7 @@ const Header = props => {
                 <img src={Logo} alt="instagram" className="logoImg"/>{ "|" }
                 <img src={LogoName} alt="instagram" className="logoName"/>
             </div>
-            <SearchBar />
+            <SearchBar searchPost={props.searchPost} />
             <div>
                 <img src={ Compass } alt="compass" className="headerCompass"/>
                 <img src={ Heart } alt="heart" className="headerHeart"/>

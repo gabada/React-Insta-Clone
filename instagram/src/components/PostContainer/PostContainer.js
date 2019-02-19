@@ -18,7 +18,7 @@ const PostContainer = props => {
                 </div>
                 <CardImg src={post.imageUrl} alt="posted-pic"/>
                 <div>
-                    <img src={ Heart } onClick={() => props.addLike(index)} alt="like" className="heart"/>
+                    <img src={ Heart } onClick={() => props.addLike(post.imageUrl)} alt="like" className="heart"/>
                     <img src={ CommentImg } alt="comment" className="commentImg"/> 
                 </div>
                 <span className="likeNumber">{post.likes} Likes</span>
