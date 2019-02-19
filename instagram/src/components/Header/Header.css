@@ -10,3 +10,16 @@
     padding-bottom: 10px;
     border-bottom: 1px lightgray solid;
 }
+
+.logoName {
+    width: 125px;
+    margin-left: 10px;
+}
+
+.logoImg {
+    margin-right: 10px;
+}
+
+.headerHeart {
+    margin: 0 40px;
+}
