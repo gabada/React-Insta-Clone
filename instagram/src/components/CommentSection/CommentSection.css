@@ -1,0 +1,14 @@
+.time {
+    color: gray;
+    margin-bottom: 10px;
+    border-bottom: 1px lightgray solid;
+    padding-bottom: 10px;
+    width: 95%;
+    margin-left: 10px;
+}
+
+.addComment {
+    border: none;
+    margin-left: 10px;
+    width: 90%;
+}
