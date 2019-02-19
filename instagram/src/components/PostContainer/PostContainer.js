@@ -18,7 +18,7 @@ const PostContainer = props => {
                 </div>
                 <CardImg src={post.imageUrl} alt="posted-pic"/>
                 <div>
-                    <img src={ Heart } alt="like" className="heart"/> 
+                    <img src={ Heart } alt="like" className="heart"/>
                     <img src={ CommentImg } alt="comment" className="commentImg"/> 
                 </div>
                 <span className="likeNumber">{post.likes} Likes</span>

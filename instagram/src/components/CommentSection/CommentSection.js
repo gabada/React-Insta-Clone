@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Comment from '../Comment/Comment';
 import PropTypes from 'prop-types';
 import Dots from '../../img/more-horizontal.svg';
+import moment from 'moment';
 
 import './CommentSection.css';
 
@@ -22,7 +23,7 @@ class CommentSection extends Component {
                     <Comment username={comment.username} text={comment.text} />
                 </div>
                 ))}
-                <span className="time">{this.state.post.timestamp}</span>
+                <span className="time">{moment(this.state.post.timestamp, 'MMMM Do YYYY, hh:mm:ss a').fromNow()}</span>
                 <div>
                 <input className="addComment" type="text" placeholder="Add a comment..."/>
                 <img src={Dots} alt="more" className="dots"/>
@@ -35,6 +36,5 @@ class CommentSection extends Component {
 CommentSection.propTypes = {
     comments: PropTypes.array
 };
-
 
 export default CommentSection;
