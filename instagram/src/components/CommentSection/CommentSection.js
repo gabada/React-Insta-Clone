@@ -16,7 +16,7 @@ const CommentSection = props => {
             <span className="time">{props.timestamp}</span>
             <div>
             <input className="addComment" type="text" placeholder="Add a comment..."/>
-            <img src={Dots} alt="more"/>
+            <img src={Dots} alt="more" className="dots"/>
             </div>
         </>
     );
