@@ -4,7 +4,7 @@ import './SearchBar.css';
 const SearchBar = props => {
     return (
         <div>
-        <input type="text" placeholder="Search"/>
+        <input type="text" placeholder="Search" className="searchPlaceHolder"/>
         </div>
     );
 };
