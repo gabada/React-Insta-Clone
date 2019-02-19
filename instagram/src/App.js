@@ -19,11 +19,19 @@ class App extends Component {
     })
   }
 
+  addLike = index => {
+    let newPosts = [...this.state.posts];
+    newPosts[index].likes += 1
+    this.setState({
+      posts: newPosts
+    })
+  }
+
   render() {
     return (
       <div className="App">
       <Header />
-      <PostContainer posts={this.state.posts} />
+      <PostContainer posts={this.state.posts} addLike={this.addLike} />
       </div>
     );
   }
