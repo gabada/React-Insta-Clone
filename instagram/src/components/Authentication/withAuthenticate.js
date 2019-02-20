@@ -1,10 +1,10 @@
 import React from 'react';
 
-const withAuthenticate = App =>
-    class extends React.Component {
-        render() {
-        return <App />;
+const withAuthenticate = PostsPage => LoginPage => props => {
+            if (localStorage.getItem('loggedIn')==='true') {
+                return <PostsPage />
+            }
+            return <LoginPage />;
         }
-};
 
 export default withAuthenticate;
