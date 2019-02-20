@@ -10,8 +10,8 @@ import './PostContainer.css'
 const PostContainer = props => {
     return (
         <>
-        {props.posts.map((post, index) => (
-            <Card key={index} className="card">
+        {props.posts.map((post) => (
+            <Card key={post.imageUrl} className="card">
                 <div>
                 <img src={post.thumbnailUrl} alt="user-logo" className="userLogo"/>
                 <span className="username">{post.username}</span>
