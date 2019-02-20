@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { Form, Input, Button, FormGroup } from 'reactstrap';
+import { CardTitle, Form, Input, Button, FormGroup } from 'reactstrap';
 
 import './LoginPage.css';
 
@@ -34,7 +34,7 @@ class LoginPage extends Component {
         return (
             <>
                 <Form className="loginForm">
-                <h1>Sign In</h1>
+                <CardTitle>Sign In</CardTitle>
                 <FormGroup>
                 <Input
                     type='text'
