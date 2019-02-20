@@ -17,6 +17,7 @@ class LoginPage extends Component {
         if (localStorage.getItem('loggedIn')==='true') {
             this.setState({loggedIn: !this.state.loggedIn})
         }
+        localStorage.setItem('loggedIn', this.state.loggedIn);
     }
 
     signIn = e => {
