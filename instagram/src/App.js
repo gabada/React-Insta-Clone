@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   searchPost = e => {
-    e.preventDefault();
     let filteredPosts = this.state.posts.filter(post => post.username.includes(e.target.value));
       this.setState({
         filteredPosts: filteredPosts
