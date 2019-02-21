@@ -55,7 +55,7 @@ class LoginPage extends Component {
                 />
                 </FormGroup>
                 <FormGroup>
-                <Button onClick={this.signIn}>Sign In</Button>
+                <Button color="primary" onClick={this.signIn}>Sign In</Button>
                 </FormGroup>
                 </Form>
             </>
