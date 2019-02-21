@@ -12,12 +12,7 @@ const LikeNumber = styled.span`
     margin-left: 10px;
 `;
 
-const ConversationImg = styled.img`
-    margin: 10px;
-    margin-left: 10px;
-`;
-
-const HeartImg = styled.img`
+const Modal = styled.img`
     margin: 10px;
 `;
 
@@ -43,8 +38,8 @@ const PostContainer = props => {
                 </div>
                 <CardImg src={post.imageUrl} alt="posted-pic"/>
                 <div>
-                    <HeartImg src={ Heart } onClick={() => props.addLike(post.imageUrl)} alt="like"/>
-                    <ConversationImg src={ CommentImg } alt="comment"/> 
+                    <Modal src={ Heart } onClick={() => props.addLike(post.imageUrl)} alt="like"/>
+                    <Modal src={ CommentImg } alt="comment"/>
                 </div>
                 <LikeNumber>{post.likes} Likes</LikeNumber>
                 <CommentSection post={post} comments={post.comments} timestamp={post.timestamp}/>
