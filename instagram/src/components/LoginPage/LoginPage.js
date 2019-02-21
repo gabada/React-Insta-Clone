@@ -1,7 +1,10 @@
 import React, { Component }  from 'react';
-import { CardTitle, Form, Input, Button, FormGroup } from 'reactstrap';
+import { CardTitle, Input, Button, FormGroup } from 'reactstrap';
+import styled from 'styled-components';
 
-import './LoginPage.css';
+const LoginForm = styled.form`
+    margin-top:200px;
+`;
 
 class LoginPage extends Component {
     constructor() {
@@ -34,7 +37,7 @@ class LoginPage extends Component {
     render() {
         return (
             <>
-                <Form className="loginForm">
+                <LoginForm>
                 <CardTitle>Sign In</CardTitle>
                 <FormGroup>
                 <Input
@@ -57,7 +60,7 @@ class LoginPage extends Component {
                 <FormGroup>
                 <Button color="primary" onClick={this.signIn}>Sign In</Button>
                 </FormGroup>
-                </Form>
+                </LoginForm>
             </>
         )
     }
