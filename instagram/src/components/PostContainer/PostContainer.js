@@ -4,8 +4,34 @@ import PropTypes from 'prop-types';
 import { Card, CardImg } from 'reactstrap';
 import Heart from '../../img/heart.svg';
 import CommentImg from '../../img/message.svg';
+import styled from 'styled-components';
 
 import './PostContainer.css'
+
+const Username = styled.span`
+    font-weight: 700;
+    margin-left: 10px;
+`;
+
+const LikeNumber = styled.span`
+    font-weight: 700;
+    margin-left: 10px;
+`;
+
+const ConversationImg = styled.img`
+    margin: 10px;
+    margin-left: 10px;
+`;
+
+const HeartImg = styled.img`
+    margin: 10px;
+`;
+
+const UserLogo = styled.img`
+    border-radius: 50%;
+    width: 50px;
+    margin: 10px 0;
+`;
 
 const PostContainer = props => {
     return (
@@ -13,15 +39,15 @@ const PostContainer = props => {
         {props.posts.map((post) => (
             <Card key={post.imageUrl} className="card">
                 <div>
-                <img src={post.thumbnailUrl} alt="user-logo" className="userLogo"/>
-                <span className="username">{post.username}</span>
+                <UserLogo src={post.thumbnailUrl} alt="user-logo"/>
+                <Username>{post.username}</Username>
                 </div>
                 <CardImg src={post.imageUrl} alt="posted-pic"/>
                 <div>
-                    <img src={ Heart } onClick={() => props.addLike(post.imageUrl)} alt="like" className="heart"/>
-                    <img src={ CommentImg } alt="comment" className="commentImg"/> 
+                    <HeartImg src={ Heart } onClick={() => props.addLike(post.imageUrl)} alt="like"/>
+                    <ConversationImg src={ CommentImg } alt="comment"/> 
                 </div>
-                <span className="likeNumber">{post.likes} Likes</span>
+                <LikeNumber>{post.likes} Likes</LikeNumber>
                 <CommentSection post={post} comments={post.comments} timestamp={post.timestamp}/>
             </Card>
         ))}
