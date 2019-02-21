@@ -7,8 +7,6 @@ import Compass from '../../img/compass.svg';
 import SearchBar from '../SearchBar/SearchBar';
 import styled from 'styled-components';
 
-import './Header.css';
-
 const HeaderStyle = styled.header`
     max-width: 800px;
     width: 100%;
@@ -23,17 +21,30 @@ const HeaderStyle = styled.header`
     border-bottom: 1px lightgray solid;
 `;
 
+const LogoNames = styled.img`
+    width: 125px;
+    margin-left: 10px;
+`;
+
+const LogoImg = styled.img`
+    margin-left: 10px;
+`;
+
+const HeaderHeart = styled.img`
+    margin: 0 40px;
+`;
+
 const Header = props => {
     return (
         <HeaderStyle>
             <div>
-                <img src={Logo} alt="instagram" className="logoImg"/>{ "|" }
-                <img src={LogoName} alt="instagram" className="logoName"/>
+                <LogoImg src={Logo} alt="instagram"/>{ " |" }
+                <LogoNames src={LogoName} alt="instagram"/>
             </div>
             <SearchBar searchPost={props.searchPost} />
             <div>
                 <img src={ Compass } alt="compass" className="headerCompass"/>
-                <img src={ Heart } alt="heart" className="headerHeart"/>
+                <HeaderHeart src={ Heart } alt="heart"/>
                 <img src={ UserLogo } alt="profile" className="headerUserLogo"/>
             </div>
         </HeaderStyle>
