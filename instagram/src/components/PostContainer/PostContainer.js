@@ -7,8 +7,6 @@ import CommentImg from '../../img/message.svg';
 import styled from 'styled-components';
 import Username from '../../styles/Reusables/Username';
 
-import './PostContainer.css'
-
 const LikeNumber = styled.span`
     font-weight: 700;
     margin-left: 10px;
@@ -29,11 +27,16 @@ const UserLogo = styled.img`
     margin: 10px 0;
 `;
 
+const CardPost = styled(Card)`
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+`;
+
 const PostContainer = props => {
     return (
         <>
         {props.posts.map((post) => (
-            <Card key={post.imageUrl} className="card">
+            <CardPost key={post.imageUrl}>
                 <div>
                 <UserLogo src={post.thumbnailUrl} alt="user-logo"/>
                 <Username weight>{post.username}</Username>
@@ -45,7 +48,7 @@ const PostContainer = props => {
                 </div>
                 <LikeNumber>{post.likes} Likes</LikeNumber>
                 <CommentSection post={post} comments={post.comments} timestamp={post.timestamp}/>
-            </Card>
+            </CardPost>
         ))}
         </>
     );
