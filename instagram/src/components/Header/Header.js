@@ -21,12 +21,15 @@ const HeaderStyle = styled.header`
     border-bottom: 1px lightgray solid;
 `;
 
+const LogoHeader = styled.div`
+`;
+
 const LogoNames = styled.img`
     width: 125px;
     margin-left: 10px;
 `;
 
-const LogoImg = styled.img`
+const LogoImage = styled.img`
     margin-left: 10px;
 `;
 
@@ -37,10 +40,10 @@ const HeaderHeart = styled.img`
 const Header = props => {
     return (
         <HeaderStyle>
-            <div>
-                <LogoImg src={Logo} alt="instagram"/>{ " |" }
+            <LogoHeader>
+                <LogoImage src={Logo} alt="instagram"/>{ " |" }
                 <LogoNames src={LogoName} alt="instagram"/>
-            </div>
+            </LogoHeader>
             <SearchBar searchPost={props.searchPost} />
             <div>
                 <img src={ Compass } alt="compass" className="headerCompass"/>

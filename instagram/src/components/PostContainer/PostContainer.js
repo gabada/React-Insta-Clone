@@ -5,13 +5,9 @@ import { Card, CardImg } from 'reactstrap';
 import Heart from '../../img/heart.svg';
 import CommentImg from '../../img/message.svg';
 import styled from 'styled-components';
+import Username from '../../styles/Reusables/Username';
 
 import './PostContainer.css'
-
-const Username = styled.span`
-    font-weight: 700;
-    margin-left: 10px;
-`;
 
 const LikeNumber = styled.span`
     font-weight: 700;
@@ -40,7 +36,7 @@ const PostContainer = props => {
             <Card key={post.imageUrl} className="card">
                 <div>
                 <UserLogo src={post.thumbnailUrl} alt="user-logo"/>
-                <Username>{post.username}</Username>
+                <Username weight>{post.username}</Username>
                 </div>
                 <CardImg src={post.imageUrl} alt="posted-pic"/>
                 <div>
